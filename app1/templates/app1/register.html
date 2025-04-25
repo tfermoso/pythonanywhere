@@ -15,6 +15,11 @@
       <div class="col-sm-10 col-md-8 col-lg-6">
         <div class="card shadow-sm">
           <div class="card-body">
+            <div class="p-3 mb-4 bg-primary text-white rounded text-center">
+              <p class="h5 mb-0">
+                ¡Bienvenido! Regístrate ahora para <strong>desbloquear</strong> los proyectos prácticos que desarrollaremos juntos. Estos son algunos de los proyectos que vas a realizar.
+              </p>
+            </div>
             <h2 class="card-title text-center mb-4">Regístrate</h2>
             <form method="post" novalidate>
               {% csrf_token %}
@@ -38,6 +43,11 @@
                 <button type="submit" class="btn btn-primary btn-lg">
                   Crear cuenta
                 </button>
+              </div>
+              <div class="d-grid">
+                <a href="{% url 'index' %}" class="btn btn-outline-secondary btn-lg">
+                  ← Volver a la página principal
+                </a>
               </div>
             </form>
           </div>

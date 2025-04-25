@@ -1,0 +1,188 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Curso de Programación</title>
+  <!-- Bootstrap 5 CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <!-- Tu CSS personalizado -->
+  <link rel="stylesheet" href="{% static 'app1/css/style.css' %}">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand text-secondary" href="{% url 'index' %}"><img src="{% static 'app1/images/logo.png'  %}" alt="" srcset=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link text-secondary" href="#front">Front-end</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="#back">Back-end</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="#db">BBDD</a></li>
+          <li class="nav-item"><a class="nav-link text-secondary" href="#tools">Herramientas</a></li>
+          <li class="nav-item"><a class="btn btn-secondary ms-3" href="{% url 'register' %}">Inscríbete</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="text-dark text-center py-5" style="background: url('https://source.unsplash.com/1600x600/?programming') center/cover no-repeat;">
+    <div class="container bg-white bg-opacity-75 p-4 rounded">
+      <h1 class="display-4 fw-bold text-secondary">Curso Completo de Programación</h1>
+      <p class="lead text-muted">Domina Front-end, Back-end, Bases de Datos y las mejores herramientas</p>
+      <a href="{% url 'register' %}" class="btn btn-secondary btn-lg mt-3">Empieza Ahora</a>
+    </div>
+  </header>
+
+  <!-- Front-end -->
+  <section id="front" class="py-5">
+    <div class="container">
+      <h2 class="mb-4 text-center text-secondary">Front-end</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm">
+            <img src="{% static 'app1/images/front.png' %}" class="card-img-top" alt="Front-end Lenguajes">
+            <div class="card-body">
+              <h5 class="card-title text-secondary">Lenguajes</h5>
+              <ul class="list-unstyled text-muted">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm">
+            <img src="{% static 'app1/images/frontendframeworks.jpg' %}" class="card-img-top" alt="Front-end Frameworks">
+            <div class="card-body">
+              <h5 class="card-title text-secondary">Frameworks</h5>
+              <ul class="list-unstyled text-muted">
+                <li>React</li>
+                <li>Angular</li>
+                <li>Vue.js</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back-end -->
+  <section id="back" class="bg-light py-5">
+    <div class="container">
+      <h2 class="mb-4 text-center text-secondary">Back-end</h2>
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="card h-100 text-center shadow-sm">
+            <img src="{% static 'app1/images/php.png' %}" class="card-img-top" alt="PHP">
+            <div class="card-body"><h5 class="card-title text-secondary">PHP</h5></div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card h-100 text-center shadow-sm">
+            <img src="{% static 'app1/images/python.png' %}" class="card-img-top" alt="Python Django">
+            <div class="card-body"><h5 class="card-title text-secondary">Python &amp; Django</h5></div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card h-100 text-center shadow-sm">
+            <img src="{% static 'app1/images/java.png' %}" class="card-img-top" alt="Java Spring">
+            <div class="card-body"><h5 class="card-title text-secondary">Java &amp; Spring</h5></div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card h-100 text-center shadow-sm">
+            <img src="{% static 'app1/images/node.png' %}" class="card-img-top" alt="Node.js">
+            <div class="card-body"><h5 class="card-title text-secondary">Node.js</h5></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bases de Datos -->
+  <section id="db" class="py-5">
+    <div class="container">
+      <h2 class="mb-4 text-center text-secondary">Bases de Datos</h2>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="{% static 'app1/images/mysql.png' %}" class="card-img-top" alt="MySQL">
+            <div class="card-body"><h5 class="card-title text-secondary">MySQL</h5></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="{% static 'app1/images/sqlite370.svg' %}" class="card-img-top" alt="SQLite">
+            <div class="card-body"><h5 class="card-title text-secondary">SQLite</h5></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="{% static 'app1/images/PostgreSQL.svg' %}" class="card-img-top" alt="PostgreSQL">
+            <div class="card-body"><h5 class="card-title text-secondary">PostgreSQL</h5></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Herramientas -->
+  <section id="tools" class="bg-light py-5">
+    <div class="container">
+      <h2 class="mb-4 text-center text-secondary">Herramientas y Técnicas</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm">
+            <img src="{% static 'app1/images/cover_git.png' %}" class="card-img-top" alt="Git">
+            <div class="card-body">
+              <h5 class="card-title text-secondary">Herramientas de Desarrollo</h5>
+              <ul class="list-unstyled text-muted">
+                <li>Git</li>
+                <li>IntelliJ IDEA</li>
+                <li>Visual Studio Code</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm">
+            <img src="{% static 'app1/images/ajax.png' %}" class="card-img-top" alt="AJAX y APIs">
+            <div class="card-body">
+              <h5 class="card-title text-secondary">Técnicas Web</h5>
+              <ul class="list-unstyled text-muted">
+                <li>AJAX</li>
+                <li>APIs REST</li>
+                <li>JWT Token</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-light text-center py-4">
+    <div class="container">
+      <p class="mb-0 text-muted">&copy; 2025 Mi Curso de Programación</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  ></script>
+</body>
+</html>

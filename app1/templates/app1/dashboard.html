@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Bienvenido</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Dashboard</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="{% url 'salir' %}">Cerrar sesión</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-5">
+    <h1 class="mb-4">Hola {{ user.username }}, estos son los proyectos:</h1>
+    <div class="row">
+      {% for proyecto in proyectos %}
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="{{ proyecto.imagen.url }}" class="card-img-top" alt="{{ proyecto.titulo }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ proyecto.titulo }}</h5>
+            <p class="card-text">{{ proyecto.descripcion|truncatewords:25 }}</p>
+            <a href="{{ proyecto.enlace }}" class="btn btn-outline-primary" target="_blank">Repositorio GitHub</a>
+          </div>
+          <div class="card-footer text-muted">
+            {{ proyecto.fecha }}
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <p>No hay proyectos aún.</p>
+      {% endfor %}
+    </div>
+  </div>
+</body>
+</html>

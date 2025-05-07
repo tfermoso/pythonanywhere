@@ -47,7 +47,7 @@
   <section id="proyectos" class="py-5">
     <div class="container">
       <h2 class="mb-4 text-center text-secondary">Proyectos de nuestros alumnos</h2>
-      <div class="row g-4">
+      <div class="row g-4 proyectos-row">
         {% for proyecto in proyectos %}
           <div class="col-md-4">
             <div class="card h-100 shadow-sm">
@@ -65,7 +65,7 @@
             </div>
           </div>
           {% if forloop.counter|divisibleby:3 and not forloop.last %}
-            </div><div class="row g-4">
+            </div><div class="row g-4 proyectos-row">
           {% endif %}
         {% empty %}
           <p class="text-center text-muted">Aún no hay proyectos publicados.</p>

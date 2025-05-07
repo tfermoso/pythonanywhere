@@ -9,9 +9,11 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView
 from django.contrib.auth import logout
 from django.conf import settings
+from .models import Proyecto  
 
 def index(request):
-        return render(request, "app1/index.html")
+    proyectos = Proyecto.objects.all().order_by('-id')  # O por el campo que prefieras
+    return render(request, "app1/index.html", {"proyectos": proyectos})
 
 
 def register(request):

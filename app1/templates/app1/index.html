@@ -43,6 +43,33 @@
     </div>
   </header>
 
+  <!-- Proyectos de nuestros alumnos -->
+  <section id="proyectos" class="py-5">
+    <div class="container">
+      <h2 class="mb-4 text-center text-secondary">Proyectos de nuestros alumnos</h2>
+      <div class="row g-4">
+        {% for proyecto in proyectos %}
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <a href="{{ proyecto.url }}" target="_blank" style="text-decoration: none; color: inherit;">
+                <img src="{{ proyecto.imagen.url }}" class="card-img-top" alt="{{ proyecto.titulo }}">
+                <div class="card-body">
+                  <h5 class="card-title text-secondary">{{ proyecto.titulo }}</h5>
+                  <p class="card-text text-muted">{{ proyecto.descripcion }}</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          {% if forloop.counter|divisibleby:3 and not forloop.last %}
+            </div><div class="row g-4">
+          {% endif %}
+        {% empty %}
+          <p class="text-center text-muted">Aún no hay proyectos publicados.</p>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
   <!-- Front-end -->
   <section id="front" class="py-5">
     <div class="container">

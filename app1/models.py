@@ -9,6 +9,7 @@ class Proyecto(models.Model):
     fecha = models.DateField()
     imagen = models.ImageField(upload_to='proyectos/')  # sube a /media/proyectos/
     enlace = models.URLField(verbose_name='Repositorio GitHub')
+    url = models.URLField(verbose_name='URL del proyecto del alumno', blank=True, null=True)
 
     def __str__(self):
         return self.titulo
